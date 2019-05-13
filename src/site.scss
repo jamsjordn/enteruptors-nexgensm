@@ -36,18 +36,22 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+th {
 	font-family: "Montserrat", "Helvetica", "Arial", sans-serif;
 }
 
 p,
 div,
-li {
+li,
+td {
 	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 p,
-li {
+li,
+td,
+th {
 	font-size: 1.2rem;
 	font-weight: 400;
 }
@@ -77,15 +81,24 @@ a {
 	}
 }
 
+html {
+	width: 100vw;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
 .hero {
 }
 
 header {
-	transition: all 0.5s ease-out;
+	&,
+	* {
+		transition: all 0.3s ease-out;
+	}
 	background: $ent-purple;
 	color: white;
 	display: grid;
-	grid-template: 100% / minmax(0px, 2fr) minmax(300px, 3fr);
+	grid-template: 100% / minmax(0px, 2fr) minmax(200px, 3fr);
 	justify-content: space-around;
 	height: 100px;
 	position: fixed;
@@ -95,7 +108,10 @@ header {
 	z-index: 20;
 
 	&.small {
-		height: 60px;
+		height: 4rem;
+		li a {
+			padding: 1.4rem 0.5rem;
+		}
 	}
 	> .logos {
 		//display: grid;
@@ -170,10 +186,10 @@ main {
 }
 
 article > section {
-	> *:first-child {
+	> *:first-child:not(.card) {
 		padding-top: 150px;
 	}
-	> *:last-child:not(.hidden) {
+	> *:last-child:not(.hidden):not(.card) {
 		padding-bottom: 80px;
 	}
 }
@@ -233,7 +249,8 @@ section > div {
 }
 
 [data-section="hero"] {
-	min-height: 100vh;
+	min-height: 95vh;
+	min-height: calc(100vh - 20px);
 
 	background: $ent-purple;
 	color: white;
@@ -318,6 +335,90 @@ section > div {
 [data-section="testimonials"] {
 	padding-left: 20px;
 	padding-right: 20px;
+}
+
+[data-section="benefits"] {
+	padding-left: 20px;
+	padding-right: 20px;
+	overflow-y: auto;
+	max-width: 100%;
+
+	.key {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 25%));
+
+		[data-potential]:before {
+			content: "";
+			width: 20px;
+			height: 20px;
+			display: block;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 0.5px 2px 0 rgba(0, 0, 0, 0.1);
+			position: relative;
+			left: -30px;
+			top: 20px;
+		}
+		[data-potential="Low"]:before {
+			background: orange;
+			color: orange;
+		}
+		[data-potential="Medium"]:before {
+			background: yellow;
+			color: yellow;
+		}
+		[data-potential="High"]:before {
+			background: yellowgreen;
+			color: yellowgreen;
+		}
+	}
+
+	table {
+		width: 100%;
+		min-width: 700px;
+		max-width: 1400px;
+
+		border-spacing: 12px;
+
+		tr {
+			td:nth-of-type(1) {
+				font-family: "Montserrat", "Helvetica", "Arial", sans-serif;
+			}
+
+			td:nth-of-type(2),
+			[data-potential] {
+				border-radius: 3px;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 0.5px 2px 0 rgba(0, 0, 0, 0.1);
+				padding: 5px;
+			}
+			[data-potential] {
+				text-align: center;
+			}
+
+			td:nth-of-type(2) {
+				ul {
+					padding: 15px;
+					margin: 0px;
+				}
+				li {
+					list-style: none;
+					padding: 0px;
+					margin: 0px;
+				}
+			}
+
+			[data-potential="Low"] {
+				background: orange;
+				color: orange;
+			}
+			[data-potential="Medium"] {
+				background: yellow;
+				color: yellow;
+			}
+			[data-potential="High"] {
+				background: yellowgreen;
+				color: yellowgreen;
+			}
+		}
+	}
 }
 
 .card {

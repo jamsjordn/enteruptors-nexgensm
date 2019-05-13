@@ -85,18 +85,22 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+th {
   font-family: "Montserrat", "Helvetica", "Arial", sans-serif;
 }
 
 p,
 div,
-li {
+li,
+td {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 p,
-li {
+li,
+td,
+th {
   font-size: 1.2rem;
   font-weight: 400;
 }
@@ -119,12 +123,17 @@ a:hover, a:visited, a:link {
   text-decoration: none;
 }
 
+html {
+  width: 100vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 header {
-  transition: all 0.5s ease-out;
   background: #362596;
   color: white;
   display: grid;
-  grid-template: 100%/minmax(0px, 2fr) minmax(300px, 3fr);
+  grid-template: 100%/minmax(0px, 2fr) minmax(200px, 3fr);
   justify-content: space-around;
   height: 100px;
   position: fixed;
@@ -133,8 +142,15 @@ header {
   right: 0;
   z-index: 20;
 }
+header,
+header * {
+  transition: all 0.3s ease-out;
+}
 header.small {
-  height: 60px;
+  height: 4rem;
+}
+header.small li a {
+  padding: 1.4rem 0.5rem;
 }
 header > .logos {
   padding: 8px;
@@ -200,10 +216,10 @@ header nav ul li a {
   display: block;
 }
 
-article > section > *:first-child {
+article > section > *:first-child:not(.card) {
   padding-top: 150px;
 }
-article > section > *:last-child:not(.hidden) {
+article > section > *:last-child:not(.hidden):not(.card) {
   padding-bottom: 80px;
 }
 
@@ -260,7 +276,8 @@ section > div > img {
 }
 
 [data-section=hero] {
-  min-height: 100vh;
+  min-height: 95vh;
+  min-height: calc(100vh - 20px);
   background: #362596;
   color: white;
   display: grid;
@@ -335,6 +352,78 @@ section > div > img {
 [data-section=testimonials] {
   padding-left: 20px;
   padding-right: 20px;
+}
+
+[data-section=benefits] {
+  padding-left: 20px;
+  padding-right: 20px;
+  overflow-y: auto;
+  max-width: 100%;
+}
+[data-section=benefits] .key {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 25%));
+}
+[data-section=benefits] .key [data-potential]:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 0.5px 2px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+  left: -30px;
+  top: 20px;
+}
+[data-section=benefits] .key [data-potential=Low]:before {
+  background: orange;
+  color: orange;
+}
+[data-section=benefits] .key [data-potential=Medium]:before {
+  background: yellow;
+  color: yellow;
+}
+[data-section=benefits] .key [data-potential=High]:before {
+  background: yellowgreen;
+  color: yellowgreen;
+}
+[data-section=benefits] table {
+  width: 100%;
+  min-width: 700px;
+  max-width: 1400px;
+  border-spacing: 12px;
+}
+[data-section=benefits] table tr td:nth-of-type(1) {
+  font-family: "Montserrat", "Helvetica", "Arial", sans-serif;
+}
+[data-section=benefits] table tr td:nth-of-type(2),
+[data-section=benefits] table tr [data-potential] {
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 0.5px 2px 0 rgba(0, 0, 0, 0.1);
+  padding: 5px;
+}
+[data-section=benefits] table tr [data-potential] {
+  text-align: center;
+}
+[data-section=benefits] table tr td:nth-of-type(2) ul {
+  padding: 15px;
+  margin: 0px;
+}
+[data-section=benefits] table tr td:nth-of-type(2) li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+[data-section=benefits] table tr [data-potential=Low] {
+  background: orange;
+  color: orange;
+}
+[data-section=benefits] table tr [data-potential=Medium] {
+  background: yellow;
+  color: yellow;
+}
+[data-section=benefits] table tr [data-potential=High] {
+  background: yellowgreen;
+  color: yellowgreen;
 }
 
 .card {

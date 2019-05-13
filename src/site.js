@@ -4,10 +4,10 @@ var observer = new IntersectionObserver(function (entries) {
         console.log({
             intersecting: entry.isIntersecting,
             ratio: entry.intersectionRatio,
-            name: entry.target.dataset.section
+            name: entry.target.closest('section').dataset.section
         })
         if (entry.isIntersecting === true) {
-            let sectionName = entry.target.dataset.section;
+            let sectionName = entry.target.closest('section').dataset.section;
             document.querySelectorAll('header>nav>ul>li').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('header')[0].classList.add('small');
 
@@ -19,11 +19,11 @@ var observer = new IntersectionObserver(function (entries) {
             }
         }
     })
-}, { root: null, threshold: [0.7] });
+}, { root: null, rootMargin: '-10% 0% -50% 0%', threshold: [0.1] });
 
 
-document.querySelectorAll("main>article>section").forEach(section => {
-    //observer.observe(section);
+document.querySelectorAll("main>article>section>*").forEach(section => {
+    observer.observe(section);
 })
 
 function cycleHero() {
