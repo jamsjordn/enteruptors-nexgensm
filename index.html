@@ -8,6 +8,12 @@
 	<link rel="stylesheet" type="text/css" href="public/css/site.css">
 	<meta name="viewport" content="width=device-width,initial-scale=1,height=device-height,minimum-scale=1.0">
 	<link rel="icon" href="/favicon.ico">
+	<style>
+		.hidden {
+			opacity: 0;
+			visibility: hidden
+		}
+	</style>
 </head>
 
 <body>
@@ -20,6 +26,9 @@
 			<ul>
 				<li onclick="window.location.href='#features'">
 					<a href=" #features">Features</a>
+				</li>
+				<li onclick="window.location.href='#products'">
+					<a href=" #products">Products</a>
 				</li>
 				<li onclick="window.location.href='#benefits'">
 					<a href="#benefits">Benefits</a>
@@ -44,14 +53,34 @@
 	<main>
 		<article>
 			<section data-section="hero" tab>
-				<p>Do you want certainty around risk and compliance?</p>
-				<!--
-                <p>Do you want to improve data quality and compliance cost?</p>
-                <p>Tired of wasting time reconciling data from disparate sources?</p>
-                <p>Worried about the cost of compliance?</p>
-                -->
+				<div>
+					<p>Do you want certainty around risk and compliance?</p>
+					<p class="hidden">Do you want to improve data quality and compliance cost?</p>
+					<p class="hidden">Tired of wasting time reconciling data from disparate sources?</p>
+					<p class="hidden">Worried about the cost of compliance?</p>
+				</div>
+
 			</section>
 			<section data-section="brief">
+				<p>Don’t put up with costly workarounds and spreadsheets to fill the gaps in risk, compliance, and
+					finance not covered by enterprise systems.</p>
+				<p>Join other business leaders who enjoy certainty, productivity, reduced costs and actionable
+					intelligence?</p>
+				<p>It is time to get your regulatory house in order with a team of pragmatic experts who build
+					structure, systems and automation so you can focus on the business.</p>
+				<p>Enteruptors makes it easy to replace that costly mishmash of heterogenous applications that have
+					grown organically in reaction to decades of regulation. Helping business leaders to digitally
+					transform risk and compliance with minimal risk, at low cost and with little interruption to the
+					business.</p>
+				<p>You can now get better sight of risk, streamlined process and increased productivity without
+					investing in monolithic systems that take years to implement.</p>
+				<p>Enteruptors gives business leaders certainty by replacing workarounds with apps that can be developed
+					quickly with small teams. We are building micro business systems with workflow, audit and security
+					that open your regulatory ecosystem to artificial intelligence and data analytics.</p>
+
+
+
+				<!--
 				<p>In every organisation, core business systems don't cover 100% of the functions of the business.
 					Workarounds are built to cover the many manual processes and spreadsheets. Businesses intend to
 					replace workarounds with full business systems, but these projects get put on the backburner.</p>
@@ -74,11 +103,61 @@
 				</ul>
 				<p>This is a universal issue and by replacing these workarounds with a proper system your business will
 					solve a great number of its problems.</p>
+					-->
 			</section>
 			<section data-section="features">
 				<h1 id="features">Features</h1>
+				<div class="features">
+					<div class="feature-item card">
+						<div>
+							<img src="public/img/features/data-quality.png" alt="" width="100px" height="100px"
+								style="object-fit: contain"></div>
+						<p>Data Quality</p>
+						<p>Applying quality control management to risk and compliance to minimise error</p>
+					</div>
+					<div class="feature-item card">
+						<div>
+							<img src="public/img/features/one-source-of-truth.png" alt="" width="100px" height="100px"
+								style="object-fit: contain"></div>
+						<p>One source of truth</p>
+						<p>Consolidating data and algorithms in one place</p>
+					</div>
+					<div class="feature-item card">
+						<div>
+							<img src="public/img/features/interation.jpg" alt="" width="100px" height="100px"
+								style="object-fit: contain"></div>
+						<p>Integration</p>
+						<p>Integration with host systems, spreadsheets and data lakes</p>
+					</div>
+					<div class="feature-item card">
+						<div>
+							<img src="public/img/features/automation.jpg" alt="" width="100px" height="100px"
+								style="object-fit: contain"></div>
+						<p>Automation</p>
+						<p>Automating complex, unstructured processes for risk and compliance</p>
+					</div>
+					<div class="feature-item card">
+						<div>
+							<img src="public/img/features/audit-security-control.png" alt="" width="100px"
+								height="100px" style="object-fit: contain"></div>
+						<p>Audit, Security and Control</p>
+						<p>Enhancing audit and assurance to meet higher standards of regulation and culture</p>
+					</div>
+					<div class="feature-item card">
+						<div>
+							<img src="public/img/features/artificial-intelligence.jpg" alt="" width="100px"
+								height="100px" style="object-fit: contain"></div>
+						<p>Artificial Intelligence</p>
+						<p>Providing data and functionality for machine learning, predictive analytics and robotic
+							automation</p>
+					</div>
+				</div>
 				<img src="public/img/features-diagram.png" width="981px" height="369px">
-				<section>
+			</section>
+
+			<section data-section="products">
+				<h1 id="products">Products</h1>
+				<div class="product  card">
 					<img src="public/img/features-reginabox.png" width="">
 					<div>
 						<h2>Reg in a Box</h2>
@@ -95,8 +174,8 @@
 							<li>Dashboards</li>
 						</ul>
 					</div>
-				</section>
-				<section>
+				</div>
+				<div class="product  card">
 					<img src="public/img/featurers-iqcontrol.png" width="">
 					<div>
 						<h2>IQ-Control</h2>
@@ -105,8 +184,8 @@
 						<p>Integrating machine learning, chatbots and search facilities with workflow.</p>
 						<p>Sophisticated dashboards to deliver better sight of risk</p>
 					</div>
-				</section>
-				<section>
+				</div>
+				<div class="product card">
 					<img src="public/img/features-robotauditor.jpg" width="">
 					<div>
 						<h2>Robot Auditor</h2>
@@ -114,11 +193,12 @@
 							alerts management on exceptions.</p>
 						<p>Taking assurance to the next level in the digital age.</p>
 					</div>
-				</section>
+				</div>
 			</section>
 			<section data-section="benefits">
 				<h1 id="benefits">Benefits</h1>
 				<p>Below demonstrates the benefits of Reg in a Box for small financial institutions</p>
+				<img src="public/img/benefits-diagram.png" width="">
 			</section>
 			<!--
 			<section data-section="industry">
@@ -129,28 +209,98 @@
 				<h1 id="team">Team</h1>
 				<p>We have a team of 50 skilled people across the USA, UK, India and Australia with experience across
 					multiple industries and specialist fields.</p>
-				<img src="public/img/team.png">
+				<div class="team">
+					<div class="team-member card">
+						<div><img src="public/img/team/DavidJordan.jpg" alt="David closeup portrait" width="100px"
+								height="100px" style="object-fit: cover"></div>
+						<p>David Jordan</p>
+						<p>25 years of banking, mining, shipping, government experience. Driving innovation, managing
+							regulation, transforming business.</p>
+					</div>
+					<div class="team-member card">
+						<div><img src="public/img/team/AjithKumarPerakathuSomasekharan.jpg" alt="Ajith closeup portrait"
+								width="100px" height="100px" style="object-fit: cover"></div>
+						<p>Ajith Kumar Perakathu Somasekharan</p>
+						<p>17+ years experience in software engineering, product design, development, & implementation.
+							10+
+							years experience as business architect and created big revenue model for USA companies. 3 of
+							his
+							major project got <span style="text-decoration: underline">acquired by Fortune
+								Companies</span>.
+						</p>
+					</div>
+					<div class="team-member card">
+						<div><img src="public/img/team/JeromeMcteigue.jpg" alt="Jerome closeup portrait" width="100px"
+								height="100px" style="object-fit: cover"></div>
+						<p>Jerome McTeigue</p>
+						<p>Consultant technology and infrastructure</p>
+						<p>20 years experience in software architecture in banking, government and manufacturing.</p>
+					</div>
+
+					<div class="team-member card">
+						<div><img src="public/img/team/MarkSampson.png" alt="Mark closeup portrait" width="100px"
+								height="100px" style="object-fit: cover"></div>
+						<p>Mark Sampson</p>
+						<p>Business development</p>
+						<p>30 years experience in business development, sales and marketing. Enterprise solutions UK and
+							AU.</p>
+					</div>
+
+					<div class="team-member card">
+						<div><img src="public/img/team/GeorgeMurdocca.png" alt="George closeup portrait" width="100px"
+								height="100px" style="object-fit: cover"></div>
+						<p>George Murdocca</p>
+						<p>Security, cyber, governance, crypto, data</p>
+						<p>15 years experience systems engineering, compliance, governance, crypto currencies, big data,
+							cybersecurity.</p>
+					</div>
+
+					<div class="team-member card">
+						<div><img src="public/img/team/SajuVarghese.png" alt="Saju closeup portrait" width="100px"
+								height="100px" style="object-fit: cover"></div>
+						<p>Saju Varghese</p>
+						<p>Sr. Project Manager</p>
+						<p>20 years of experience in software design & development, consulting, data migration, and team
+							management.</p>
+					</div>
+
+					<div class="team-member card">
+						<div><img src="public/img/team/GlenSallis.jpg" alt="Glenn closeup portrait" width="100px"
+								height="100px" style="object-fit: cover"></div>
+						<p>Glenn Sallis</p>
+						<p>Independent Consultant Germany</p>
+						<p>23 years experience in software development, training and consulting.</p>
+					</div>
+
+					<div class="team-member card">
+						<div>
+							<img src="public/img/team/PonnammalSubramoneyIyer.jpg" alt="Ponnammal closeup portrait"
+								width="100px" height="100px" style="object-fit: cover">
+						</div>
+						<p>Ponnammal Subramoney Iyer</p>
+						<p>Sr. Requirement Manager</p>
+						<p>17 years experience in software development, project management, business analysis & testing.
+						</p>
+					</div>
+				</div>
 			</section>
 			<section data-section="testimonials">
 				<h1 id="testimonials">Testimonials</h1>
-				<div class="testimonial">
-					<img src="/public/img/southwest.png" width="">
-					<p>“By aligning financial budgeting with strategic planning and regulatory reporting, South West
+				<div class="testimonial card">
+					<img src="/public/img/southwest.png" width="250px">
+					<p>By aligning financial budgeting with strategic planning and regulatory reporting, South West
 						Credit has been able to do more with the same level of resources such as stress tests, rolling
-						forecasts and strategic planning that has delivered real savings.”</br></br>
-
-						David Brown</br>
-						CEO South West Credit
-					</p>
+						forecasts and strategic planning that has delivered real savings.</p>
+					<p>David Brown</p>
+					<p>CEO South West Credit</p>
 				</div>
-				<div class="testimonial">
-					<img src="/public/img/societe generale.jpg">
-					<p>“We Chose to work with Enteruptors for a regulatory based POC industrialising 2nd line of Defense
+				<div class="testimonial card">
+					<img src="/public/img/societe generale.png" width="250px">
+					<p>We Chose to work with Enteruptors for a regulatory based POC industrialising 2nd line of Defense
 						in a banking industry. David and team were very dynamic, showed a full understanding of the
-						challenge, and delivered a very powerful solution in 10 weeks only.”</br></br>
-						Christophe Duprat</br>
-						head of open innovation for SocGen India
-					</p>
+						challenge, and delivered a very powerful solution in 10 weeks only.</p>
+					<p>Christophe Duprat</p>
+					<p>Head of Open Innovation for SocGen India</p>
 				</div>
 			</section>
 			<section data-section="contact-us">

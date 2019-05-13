@@ -25,3 +25,22 @@ var observer = new IntersectionObserver(function (entries) {
 document.querySelectorAll("main>article>section").forEach(section => {
     //observer.observe(section);
 })
+
+function cycleHero() {
+    setTimeout(() => {
+        let currentHero = document.querySelectorAll('[data-section="hero"] p:not(.hidden)')[0]
+        currentHero.classList.add('hidden');
+        //console.log(currentHero);
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                if (typeof currentHero.nextElementSibling !== 'undefined' && currentHero.nextElementSibling !== null) {
+                    currentHero.nextElementSibling.classList.remove('hidden')
+                } else {
+                    document.querySelectorAll('[data-section="hero"] p:first-of-type')[0].classList.remove('hidden');
+                };
+                cycleHero();
+            }, 600);
+        });
+    }, 5000);
+}
+cycleHero();
